@@ -5,10 +5,10 @@ use std::path::Path;
 use std::ptr;
 
 use chemfiles_sys::*;
-use errors::{check, check_success, Error, Status};
-use strings;
+use crate::errors::{check, check_success, Error, Status};
+use crate::strings;
 
-use {Frame, Topology, UnitCell};
+use crate::{Frame, Topology, UnitCell};
 
 /// The `Trajectory` type is the main entry point when using chemfiles. A
 /// `Trajectory` behave a bit like a file, allowing to read and/or write
@@ -301,7 +301,7 @@ mod test {
     use std::path::Path;
     use std::io::Read;
 
-    use {Atom, Frame, Topology, UnitCell};
+    use crate::{Atom, Frame, Topology, UnitCell};
 
     #[test]
     fn read() {
@@ -326,8 +326,8 @@ mod test {
 
         {
             let positions = frame.positions();
-            assert_eq!(positions[0], [0.417219, 8.303366, 11.737172]);
-            assert_eq!(positions[124], [5.099554, -0.045104, 14.153846]);
+            assert_eq!(positions[0], [0.417_219, 8.303_366, 11.737_172]);
+            assert_eq!(positions[124], [5.099_554, -0.045_104, 14.153_846]);
         }
 
         assert_eq!(frame.atom(0).name(), "O");
@@ -339,8 +339,8 @@ mod test {
 
         {
             let positions = frame.positions();
-            assert_eq!(positions[0], [0.761277, 8.106125, 10.622949]);
-            assert_eq!(positions[124], [5.13242, 0.079862, 14.194161]);
+            assert_eq!(positions[0], [0.761_277, 8.106_125, 10.622_949]);
+            assert_eq!(positions[124], [5.13242, 0.079_862, 14.194_161]);
         }
 
         {
@@ -384,11 +384,8 @@ mod test {
         let mut frame = Frame::new();
         frame.resize(4);
 
-        {
-            let positions = frame.positions_mut();
-            for i in 0..positions.len() {
-                positions[i] = [1.0, 2.0, 3.0];
-            }
+        for position in frame.positions_mut() {
+            *position = [1.0, 2.0, 3.0];
         }
 
         let mut topology = Topology::new();

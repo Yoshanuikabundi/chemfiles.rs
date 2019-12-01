@@ -10,7 +10,7 @@ use std::path::Path;
 use self::libc::c_char;
 
 use chemfiles_sys::*;
-use strings;
+use crate::strings;
 
 #[derive(Clone, Debug, PartialEq)]
 /// Error type for Chemfiles.
@@ -186,7 +186,7 @@ impl error::Error for Error {
 #[cfg(test)]
 mod test {
     use super::*;
-    use Trajectory;
+    use crate::Trajectory;
 
     #[test]
     fn errors() {

@@ -5,12 +5,12 @@ use std::ptr;
 use std::slice;
 
 use chemfiles_sys::*;
-use strings;
-use errors::{check_not_null, check_success, check, Error};
+use crate::strings;
+use crate::errors::{check_not_null, check_success, check, Error};
 use super::{Atom, AtomRef, AtomMut};
 use super::{Topology, TopologyRef, Residue, BondOrder};
 use super::{UnitCell, UnitCellRef, UnitCellMut};
-use property::{Property, RawProperty, PropertiesIter};
+use crate::property::{Property, RawProperty, PropertiesIter};
 
 /// A `Frame` contains data from one simulation step: the current unit
 /// cell, the topology, the positions, and the velocities of the particles in
@@ -861,7 +861,7 @@ impl Drop for Frame {
 #[cfg(test)]
 mod test {
     use super::*;
-    use {Atom, Topology, UnitCell};
+    use crate::{Atom, Topology, UnitCell};
 
     #[test]
     fn clone() {

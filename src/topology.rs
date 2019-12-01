@@ -4,7 +4,7 @@ use std::ops::{Drop, Deref};
 use std::marker::PhantomData;
 
 use chemfiles_sys::*;
-use errors::{check, check_not_null, check_success, Error};
+use crate::errors::{check, check_not_null, check_success, Error};
 use super::{Atom, AtomRef, AtomMut};
 use super::{Residue, ResidueRef};
 
@@ -768,7 +768,7 @@ impl Drop for Topology {
 #[cfg(test)]
 mod test {
     use super::*;
-    use {Atom, Residue};
+    use crate::{Atom, Residue};
 
     #[test]
     fn clone() {

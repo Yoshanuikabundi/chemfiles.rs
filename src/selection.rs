@@ -5,9 +5,9 @@ use std::iter::IntoIterator;
 use std::slice::Iter;
 
 use chemfiles_sys::*;
-use errors::{check, check_not_null, check_success, Error, Status};
-use strings;
-use frame::Frame;
+use crate::errors::{check, check_not_null, check_success, Error, Status};
+use crate::strings;
+use crate::frame::Frame;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 /// A `Match` is a set of atomic indexes matching a given selection. It can
@@ -300,9 +300,9 @@ impl Selection {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use Frame;
-    use Topology;
-    use Atom;
+    use crate::Frame;
+    use crate::Topology;
+    use crate::Atom;
 
     #[test]
     fn clone() {

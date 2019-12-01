@@ -44,41 +44,41 @@ use chemfiles_sys::{chfl_add_configuration, chfl_version};
 mod strings;
 
 mod errors;
-pub use errors::{Error, Status};
-pub use errors::set_warning_callback;
+pub use crate::errors::{Error, Status};
+pub use crate::errors::set_warning_callback;
 
 mod atom;
-pub use atom::Atom;
-pub use atom::AtomRef;
-pub use atom::AtomMut;
+pub use crate::atom::Atom;
+pub use crate::atom::AtomRef;
+pub use crate::atom::AtomMut;
 
 mod cell;
-pub use cell::UnitCell;
-pub use cell::UnitCellRef;
-pub use cell::UnitCellMut;
-pub use cell::CellShape;
+pub use crate::cell::UnitCell;
+pub use crate::cell::UnitCellRef;
+pub use crate::cell::UnitCellMut;
+pub use crate::cell::CellShape;
 
 mod residue;
-pub use residue::Residue;
-pub use residue::ResidueRef;
+pub use crate::residue::Residue;
+pub use crate::residue::ResidueRef;
 
 mod topology;
-pub use topology::Topology;
-pub use topology::TopologyRef;
-pub use topology::BondOrder;
+pub use crate::topology::Topology;
+pub use crate::topology::TopologyRef;
+pub use crate::topology::BondOrder;
 
 mod frame;
-pub use frame::Frame;
+pub use crate::frame::Frame;
 
 mod trajectory;
-pub use trajectory::Trajectory;
+pub use crate::trajectory::Trajectory;
 
 mod selection;
-pub use selection::{Match, Selection};
+pub use crate::selection::{Match, Selection};
 
 mod property;
-pub use property::Property;
-pub use property::PropertiesIter;
+pub use crate::property::Property;
+pub use crate::property::PropertiesIter;
 
 /// Get the version of the chemfiles library.
 ///
@@ -120,7 +120,7 @@ where
 mod tests {
     #[test]
     fn version() {
-        assert!(::version().len() > 0);
-        assert!(::version().starts_with("0.9"));
+        assert!(crate::version().len() > 0);
+        assert!(crate::version().starts_with("0.9"));
     }
 }

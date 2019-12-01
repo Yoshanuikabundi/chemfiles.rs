@@ -5,9 +5,9 @@ use std::marker::PhantomData;
 use std::ptr;
 
 use chemfiles_sys::*;
-use errors::{check_not_null, check_success, Error};
-use property::{Property, RawProperty, PropertiesIter};
-use strings;
+use crate::errors::{check_not_null, check_success, Error};
+use crate::property::{Property, RawProperty, PropertiesIter};
+use crate::strings;
 
 /// A `Residue` is a group of atoms belonging to the same logical unit. They
 /// can be small molecules, amino-acids in a protein, monomers in polymers,

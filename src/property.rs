@@ -4,8 +4,8 @@ use std::ops::Drop;
 use std::vec::IntoIter;
 
 use chemfiles_sys::*;
-use errors::{check, check_not_null, check_success, Error};
-use strings;
+use crate::errors::{check, check_not_null, check_success, Error};
+use crate::strings;
 
 /// A thin wrapper around `CHFL_PROPERTY`
 pub(crate) struct RawProperty {

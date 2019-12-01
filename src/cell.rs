@@ -4,7 +4,7 @@ use std::ops::{Drop, Deref, DerefMut};
 use std::marker::PhantomData;
 
 use chemfiles_sys::*;
-use errors::{check_success, check_not_null, check, Error};
+use crate::errors::{check_success, check_not_null, check, Error};
 
 /// Available unit cell shapes.
 #[derive(Clone, Debug, PartialEq, Eq)]

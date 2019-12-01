@@ -5,10 +5,10 @@ use std::marker::PhantomData;
 use std::ptr;
 
 use chemfiles_sys::*;
-use errors::{check_success, check_not_null};
-use strings;
+use crate::errors::{check_success, check_not_null};
+use crate::strings;
 
-use property::{Property, RawProperty, PropertiesIter};
+use crate::property::{Property, RawProperty, PropertiesIter};
 
 /// An `Atom` is a particle in the current `Frame`. It stores the following
 /// atomic properties:

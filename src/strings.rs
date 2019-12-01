@@ -6,7 +6,7 @@ use std::ffi::{CStr, CString};
 use std::str;
 
 use chemfiles_sys::chfl_status;
-use errors::{check, Error};
+use crate::errors::{check, Error};
 
 /// Create a Rust string from a C string.
 pub fn from_c(buffer: *const i8) -> String {
